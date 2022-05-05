@@ -1,18 +1,37 @@
 import React, {Component } from 'react'
-import { Animated, ScrollView, StyleSheet, Dimensions, View, PanResponder, Image, TouchableWithoutFeedback, TouchableHighlight, Modal, Text } from 'react-native'
+import { Animated, ScrollView, StyleSheet, Dimensions, Button, View, PanResponder, Image, TouchableWithoutFeedback, TouchableHighlight, Modal, Text } from 'react-native'
 import PulsingCircle from './PulsingCircle'
+import VideoComp from './VideoComp';
 
 const MAX_ZOOM = 2.5
 const ANIMATION_DURATION = 400
 const { height, width } = Dimensions.get('window')
 const POPUP_COLOR = 'white'
 
+
 const styles = StyleSheet.create({
+	Vidcontainer: {
+		flex: 1,
+		backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+
+
 	container: {
 		flex: 1,
 	},
 	overlay: {
 		flexGrow: 1,
+	},
+
+	buttons: {
+		margin: 16
+	},
+
+	video: {
+		flex: 1,
+		alignSelf: 'stretch'
 	},
 
 	popupContainer: {
@@ -273,7 +292,10 @@ class ZoomableImage extends Component {
 			<View style={ [ styles.triangle, { marginLeft: width / 2 - 20} ] }/>
 			<View ref={ this.popupContentRef }  style={ [ styles.popupContainer, this.props.popOverStyles ] }>
 				<Text style= { styles.popupText }>{ this.currentAnnotation && this.currentAnnotation.description }</Text>
+				
 			</View>
+			
+			
 		</View>)
 	}
 
@@ -296,8 +318,11 @@ class ZoomableImage extends Component {
 						<View />
 					</TouchableHighlight>
 				</Animated.View>
+				<VideoComp/>
 				{ this.popupContent() }
+				
 			</View>
+			
 		</Modal>)
 	}
 
