@@ -2,8 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Button, View } from 'react-native';
 import { Video } from 'expo-av';
 import React from 'react';
-import { SmoothShading } from 'three';
-import ZoomableImage from './ZoomableImage';
 
 
 // README:
@@ -42,6 +40,7 @@ export default function VideoComp() {
 
 const styles = StyleSheet.create({
   container: {
+    height: '20%',
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',

@@ -1,5 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import ImageApp from './ImageApp.js'
+import Test from './test.js'
 import ZoomableImage from './ZoomableImage';
 import { LogBox } from 'react-native';
 import VideoComp from './VideoComp';
@@ -42,14 +44,15 @@ export default function App() {
     <View style={styles.container}>
       <Text>Workout App, initial setup done?!</Text>
 
-      <ZoomableImage
+      {/* <ZoomableImage
 					source={require('./public/front-view-3.jpg')}
 					imageHeight={ 600 }
 					imageWidth={ 450 }
 					annotations={annotations}
 					popOverStyles={ { backgroundColor: 'white' } }
-      />
-
+      /> */}
+	  <ImageApp/>
+	  {/* <Test/> */}
 
       <StatusBar style="auto" />
     </View>
@@ -74,3 +77,5 @@ video: {
 	alignSelf: 'stretch'
 },
 });
+
+
